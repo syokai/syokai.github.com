@@ -4,7 +4,7 @@
   <title><![CDATA[Syokai's memo]]></title>
   <link href="http://syokai.github.com/atom.xml" rel="self"/>
   <link href="http://syokai.github.com/"/>
-  <updated>2013-03-11T00:07:24+09:00</updated>
+  <updated>2013-03-11T00:19:51+09:00</updated>
   <id>http://syokai.github.com/</id>
   <author>
     <name><![CDATA[syokai]]></name>
@@ -12,5 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[first]]></title>
+    <link href="http://syokai.github.com/blog/2013/03/11/first/"/>
+    <updated>2013-03-11T00:12:00+09:00</updated>
+    <id>http://syokai.github.com/blog/2013/03/11/first</id>
+    <content type="html"><![CDATA[<p>This is my first article.<br/>
+Thanks <a href="http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-github/">http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-github/</a></p>
+]]></content>
+  </entry>
   
 </feed>
