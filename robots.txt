@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://syokai.github.com/sitemap.xml 
