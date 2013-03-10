@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>first - Syokai's memo</title>
+  <title>Practice Factor - Syokai's memo</title>
   <meta name="author" content="syokai">
 
   
-  <meta name="description" content="This is my first article.
-Thanks http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-github/
-">
+  <meta name="description" content="Factor is a programming language. I&#8217;m interested in this language. Factor belong in a family tree of Stack-Oriented Programming Language. The &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Thanks http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-github/
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://syokai.github.com/blog/2013/03/11/first">
+  <link rel="canonical" href="http://syokai.github.com/blog/2013/03/11/practice-factor">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Syokai's memo" type="application/atom+xml">
@@ -70,7 +68,7 @@ Thanks http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-github/
   
   <header>
     
-      <h1 class="entry-title">First</h1>
+      <h1 class="entry-title">Practice Factor</h1>
     
     
       <p class="meta">
@@ -86,15 +84,86 @@ Thanks http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-github/
   
 
 
-<time datetime="2013-03-11T00:12:00+09:00" pubdate data-updated="true">Mar 11<span>th</span>, 2013</time>
+<time datetime="2013-03-11T00:20:00+09:00" pubdate data-updated="true">Mar 11<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>This is my first article.<br/>
-Thanks <a href="http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-github/">http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-github/</a></p>
+<div class="entry-content"><p><a href="http://factorcode.org/">Factor</a> is a programming language. I&#8217;m interested in this language.</p>
+
+<p>Factor belong in a family tree of <a href="http://en.wikipedia.org/wiki/Stack-oriented_programming_language">Stack-Oriented Programming Language</a>. The tree include <a href="http://en.wikipedia.org/wiki/Forth_&amp;lt;programming_language&amp;amp;">Forth</a> and <a href="http://en.wikipedia.org/wiki/Joy_&amp;lt;programming_language&amp;amp;">Joy</a>.</p>
+
+<h2>Basic</h2>
+
+<p>2 + 5 = 7</p>
+
+<pre><code>( scratchpad ) 5 ! push one object to stack
+--- Data stack:
+5
+
+( scratchpad ) 2
+--- Data stack:
+5
+2
+
+( scratchpad ) + ! 2 plus 7
+--- Data stack:
+7
+</code></pre>
+
+<p>We can reduce this program.</p>
+
+<pre><code>( scratchpad ) 2 5 +
+--- Data stack:
+7
+</code></pre>
+
+<h2>Word</h2>
+
+<p>&#8216;Word&#8217; is like a function.
+For example +, /, dup, swap, map, and append are words in Factor.</p>
+
+<pre><code>( scratchpad ) 1 dup
+--- Data stack:
+1
+1
+
+( scratchpad ) -
+--- Data stack:
+0
+
+( scratchpad ) 5
+--- Data stack:
+0
+5
+
+( scratchpad ) swap
+--- Data stack:
+5
+0
+
+( scratchpad ) clear ! clear stack
+</code></pre>
+
+<p>And we can define a word. Words can&#8217;t get arguments because words use the stack.</p>
+
+<pre><code>( scratchpad ) : my-increment ( x -- y )
+    1 + ;
+
+( scratchpad ) 4
+--- Data stack:
+4
+
+( scratchpad ) my-increment
+--- Data stack:
+5
+
+( scratchpad ) my-increment
+--- Data stack:
+6
+</code></pre>
 </div>
 
 
@@ -117,7 +186,7 @@ Thanks <a href="http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-g
   
 
 
-<time datetime="2013-03-11T00:12:00+09:00" pubdate data-updated="true">Mar 11<span>th</span>, 2013</time>
+<time datetime="2013-03-11T00:20:00+09:00" pubdate data-updated="true">Mar 11<span>th</span>, 2013</time>
       
 
 
@@ -125,7 +194,7 @@ Thanks <a href="http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-g
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://syokai.github.com/blog/2013/03/11/first/" data-via="" data-counturl="http://syokai.github.com/blog/2013/03/11/first/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://syokai.github.com/blog/2013/03/11/practice-factor/" data-via="" data-counturl="http://syokai.github.com/blog/2013/03/11/practice-factor/" >Tweet</a>
   
   
   
@@ -134,8 +203,8 @@ Thanks <a href="http://blog.glidenote.com/blog/2011/11/07/install-octopress-on-g
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/03/11/first/" title="Previous Post: first">&laquo; first</a>
       
-        <a class="basic-alignment right" href="/blog/2013/03/11/practice-factor/" title="Next Post: Practice Factor">Practice Factor &raquo;</a>
       
     </p>
   </footer>
