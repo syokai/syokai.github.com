@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Macの環境整備 - Syokai's memo</title>
+  <meta name="author" content="syokai">
+
+  
+  <meta name="description" content="factorやる もう一回factorやるかー、簡単なプログラム書いてみよ。
+と思ったら、新しいPCに何も入ってなかったので、まずは環境設定。 エディタ起動 とりあえず、Emacsをおもむろに落とす。
+gistに貼った古いemacs.elをコピペし、.emacs.d/init.elに置いて起動。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://syokai.github.com/blog/2013/12/22/mac-setup">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Syokai's memo" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:syokai.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav> -->
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Macの環境整備</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-22T00:53:46+09:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h1>factorやる</h1>
+
+<p>もう一回factorやるかー、簡単なプログラム書いてみよ。
+と思ったら、新しいPCに何も入ってなかったので、まずは環境設定。</p>
+
+<h2>エディタ起動</h2>
+
+<p>とりあえず、Emacsをおもむろに落とす。
+gistに貼った古いemacs.elをコピペし、.emacs.d/init.elに置いて起動。古いが、ざっくり変えるので、とりあえずキーバインドとかがまともに効けばなんでもいい。
+昔Carbon Emacsの時代に設定していたmac-add-ignore-shortcutがもう使えないので、それが原因で立ち上がらない。その部分はとりあえず消した。
+ただ、それがなくなったのでControll-SpaceがMacのSpotlightにとられてしまう。ので、Spotlight側の設定を変更した（システム環境設定->Spotlightからショートカットを全部切る。使わないので）。</p>
+
+<h2>github設定</h2>
+
+<p>エディタの設定記事とかをブログに書き残しておこうと思ったんだが、このブログはgithubでホスティングされていて、そもそもgithubにアクセスするためのキーとか色々と無くて設定した。
+前のPCからキーを持ってきて設定しようとしたが、うまくいかず、最終的にはもう一個キーを追加。どこのPCのどのアカウントで作ったかをキーのtitleとして置いておけば、たぶん困ることはないので、次から新しく作るようにしよう。</p>
+
+<h2>git取得</h2>
+
+<p>そもそもその2として、そもそもgitがない。Command Line Toolsをダウンロードして使えるようにした。</p>
+
+<h2>Octopress設定</h2>
+
+<p>ブログをgit cloneして落としてきたんだが、ブログを生成しているOctopress自体は実はリポジトリに含まれていない。なので、別の環境で単にblogをgit cloneしただけだと、preview機能はおろか何もできない。
+ということでOctopressを落としてきたんだが、bundle installすると素直に通らない。
+xcode-select: Error: No Xcode is selected. Use xcode-select -switch &lt;path-to-xcode>, or see the xcode-select manpage (man xcode-select) for further information.
+調べると情報が出てくるが、Xcodeを入れずにCommand Line Toolsだけ入れるとこういう悲しいことになるらしい。回避方法あるらしいが、面倒になってきたのでXcodeをダウンロード。2GB以上もあるので、ダウンロードの間にこれを書いている。
+あとrubyが1.8というのもさすがにないわーなので、rbenvで2.0に上げておいた。 http://qiita.com/skinoshita/items/2cf0c27a6ff4f0602568
+しかしこのrubyバージョンアップで数時間が経過、吐きかけるのであった…。
+Xcodeを入れて再度bundle installすると、
+Gem::InstallError: liquid requires RubyGems version >= 1.3.7. Try &#8216;gem update &#8211;system&#8217; to update RubyGems itself.
+An error occurred while installing liquid (2.3.0), and Bundler cannot continue.
+Make sure that <code>gem install liquid -v '2.3.0'</code> succeeds before bundling.
+とか出てしまう。言われたとおり、普通にgemを上げてもだめ。
+gem install liquid -v &#8216;2.3.0&#8217;
+は通る。rehashしてるし、gemもbundlerもちゃんとバージョンあがっている。
+結論としては、rubyは2.0に上がったんだが、bundle installした時に見てるgemが何故かsystem(1.8のruby)という事態。意味不明なのでとりあえず1.8に戻してgemをupdateしたら通った。疲れたのでこれ以上は追わないが、budlerを入れたときのrubyのversionがsystemだったとかじゃねぇの。
+とはいえ1.8のまま使うとかはないので、2.0に切り替えて、bundlerを入れ直したりした。</p>
+
+<h2>ブログ設定</h2>
+
+<p>既にblogのコンテンツはgithubに置いてあるので、こいつをOctopressに置いて、動くようにする。この方法をドキュメントとか見ながら探したんだけど、よくわからなかった。
+結局、
+cd octpress
+rm -rf source # とりあえず今あるsourceを全部消す</p>
+
+<h1>自分のブログのテーマプラグインを設定する（https://github.com/roberto/oct2-orange）</h1>
+
+<p>git clone git@github.com:syokai/syokai.github.com.git contents
+cp -R contents source
+cp 元の環境のconfig.yml <em>config.yml # なければ頑張って書く
+rm -R </em>deploy
+cp -R source/ <em>deploy # 最終的に</em>deployを上げているっぽい気がしたので書き換えておいた
+とかしてみた。かなりテキトーだが、分からんのでしょうがない。
+とりあえずこれで、
+rake generate
+rake preview
+で見れたし、
+rake gen_deploy
+したらgithubにも上がったようなので問題ないかと思う（このコミットは微妙なスタイル変更になったんだが何故なんだろう…）。
+思うに、まじめにoctopressを使ってる人は、octopressディレクトリ全体も自分のgithubに置いたりするんだろう。pushして公開できたのを見て、「ワーイ、バックアップとれたよー」とか思っていると、こういう大変なことに巻き込まれる。</p>
+
+<h2>エディタ設定</h2>
+
+<p>ブログはさておいて、本題のエディタを設定する。</p>
+
+<h3>KeyRemap4MacBook</h3>
+
+<p>英数を単独で押した時には英数で、他のキーと併用した時はcommand(L)で、というキー配列にするためにKeyRemap4MacBookを使用する。キー配列をEmacsの外で変える（例えばキー配列の変更ソフトなどを利用する）のは正直好きじゃないのだが、しょうがない。elispで設定できるならそうしたいが知らない。</p>
+
+<h3>.el</h3>
+
+<p>とりあえず、仕事とか全部忘れてプログラミング言語系の設定は全部削除。あとtrampとかそういうのも全部さよならした。
+残ったのはキーバインドとかそういうもののみ。50行ぐらいのミニサイズになった。ここから追加していく。</p>
+
+<h3>package</h3>
+
+<p>公式ではないmelpaにしかないパッケージもあるので、以下を登録しておく。
+(require &#8216;package)
+(add-to-list &#8216;package-archives &#8216;(&#8220;melpa&#8221; . &#8220;http://melpa.milkbox.net/packages/&#8221;))
+(package-initialize)</p>
+
+<h3>helm</h3>
+
+<p>時代はanything.elではなくhelmらしい。helmはanythingのfork。
+melpa入れておけば、packageで入れられる。
+設定はこちらを参考にした。 http://yoshiori.github.io/blog/2013/01/30/dot-emacs-renewal/</p>
+
+<h3>fuel</h3>
+
+<p>emacsでfactorを書くサポートをしてくれるelisp。これを入れるための長い戦いだった…。
+fuelはfactorの中にREADMEがあるので読むと良いと思う。疲れ果てて本題を書けない本末転倒っぷりを晒して終了。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">syokai</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-22T00:53:46+09:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://syokai.github.com/blog/2013/12/22/mac-setup/" data-via="" data-counturl="http://syokai.github.com/blog/2013/12/22/mac-setup/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <ul id="recent_posts">
+      <li class="post">
+      <a href="http://syokai.github.com" alt="Home"><img src="/images/Home.png"></a>
+      <a href="http://syokai.github.com/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="http://syokai.github.com/atom.xml" alt="subscribe feed"><img src="/images/rss_big.png"></a>
+      </li>
+  </ul>
+</section>
+<section>
+  <h1>About Me</h1>
+  <p>A little something about me.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/22/mac-setup/">Macの環境整備</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - syokai -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
